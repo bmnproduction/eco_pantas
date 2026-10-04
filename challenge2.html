@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef9f2">
+  <title>Challenge 2 — Quiz Ekologi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/challenge2.css">
+  <script defer src="js/challenge2.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-page">
+      <header class="topbar">
+        <div class="brand-wrap"><div class="brand-icon">🌍</div><div><div class="brand-title">Petualangan Bumi</div><div class="brand-subtitle">Challenge 2 dari 4</div></div></div>
+        <div class="hud-group"><div class="hud-card"><span>🌟</span><strong id="progressText">0/15</strong></div><div class="hud-card timer-card"><span>⏱️</span><strong id="timerText">--:--</strong></div></div>
+      </header>
+
+      <section id="tutorialScreen" class="tutorial-screen">
+        <div class="tutorial-card">
+          <div class="tutorial-badge">🌱 CHALLENGE 2</div>
+          <h1>Quiz Ekologi</h1>
+          <p class="tutorial-lead">Jawab pertanyaan tentang tumbuhan, hewan, sampah, air, energi, dan kebiasaan baik untuk Bumi.</p>
+          <div class="how-grid">
+            <article class="how-step"><div class="how-icon">1️⃣</div><h3>Dengarkan & lihat</h3><p>Baca pertanyaan dan perhatikan gambar di tengah.</p></article>
+            <article class="how-step"><div class="how-icon">2️⃣</div><h3>Pilih jawaban</h3><p>Tekan salah satu dari tiga pilihan yang paling tepat.</p></article>
+            <article class="how-step"><div class="how-icon">3️⃣</div><h3>Boleh mencoba lagi</h3><p>Jawaban salah tidak mengurangi waktu dan akan diberi penjelasan.</p></article>
+            <article class="how-step"><div class="how-icon">4️⃣</div><h3>15 pertanyaan</h3><p>Dari kumpulan <strong>20 soal</strong>, permainan memilih 15 soal setiap sesi.</p></article>
+          </div>
+          <div class="tutorial-note">💡 Kalau bingung selama beberapa detik, petunjuk kecil akan muncul otomatis.</div>
+          <button id="startChallengeBtn" class="primary-btn">Mulai Quiz ▶️</button>
+        </div>
+      </section>
+
+      <section id="gameArea" class="content-area hidden">
+        <div class="challenge-toolbar">
+          <div><h1>🌱 Quiz Ekologi</h1><p id="questionProgress">Pertanyaan 1 dari 15</p></div>
+          <button id="hintBtn" class="secondary-btn" type="button">💡 Petunjuk</button>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-character">🧒</div>
+          <div id="questionText" class="question-bubble">Memuat pertanyaan...</div>
+          <div id="illustration" class="illustration">🌱</div>
+          <div id="options" class="options-grid"></div>
+        </div>
+
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite"><span id="feedbackIcon">⭐</span><div><strong id="feedbackTitle">Hebat!</strong><p id="feedbackText"></p></div></div>
+        <div id="hintBox" class="hint-box hidden">💡 Petunjuk akan muncul di sini.</div>
+      </section>
+
+      <section id="timeoutScreen" class="end-screen hidden">
+        <div class="end-card"><div class="end-stars">🌱 💚 🌱</div><h2>Waktu latihan selesai</h2><p>Kamu sudah menjawab banyak pertanyaan. Coba lagi dan lanjutkan perjalananmu menjaga Bumi!</p><button class="primary-btn" data-restart>🔄 Mulai Lagi</button></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

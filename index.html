@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef9f2">
+  <title>Petualangan Bumi — Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script defer src="js/game-core.js"></script>
+  <script defer src="js/home.js"></script>
+</head>
+<body>
+<main class="app-shell">
+<section class="game-page home-page">
+  <header class="home-topbar">
+    <div class="brand-wrap"><div class="brand-icon">🌍</div><div><div class="brand-title">Petualangan Bumi</div><div class="brand-subtitle">Game edukasi ekologi untuk anak</div></div></div>
+    <div class="home-actions">
+      <button id="creatorBtn" class="secondary-btn" type="button">👩‍🎨 Creator</button>
+      <button id="resetBtn" class="secondary-btn hidden" type="button">↻ Permainan Baru</button>
+    </div>
+  </header>
+
+  <section class="hero-home">
+    <div class="hero-copy">
+      <span class="home-badge">🌱 Belajar · Bermain · Menjaga Bumi</span>
+      <h1>Yuk, jadi <span>Penjaga Bumi!</span> 🌎</h1>
+      <p>Ikuti 4 challenge seru tentang sampah, ekologi, puzzle, dan eksplorasi. Kamu bisa melewati soal atau ronde, lalu kembali lagi kapan saja.</p>
+      <div class="hero-buttons">
+        <button id="startBtn" class="primary-btn">🚀 Mulai Permainan</button>
+        <button id="continueBtn" class="secondary-btn hidden">▶ Lanjutkan Permainan</button>
+      </div>
+      <div id="sessionSummary" class="session-summary hidden"></div>
+    </div>
+    <div class="hero-art" aria-label="Ilustrasi Bumi"><div class="hero-earth">🌍</div><div class="hero-float float-1">🌱</div><div class="hero-float float-2">🦋</div><div class="hero-float float-3">💧</div><div class="hero-float float-4">♻️</div></div>
+  </section>
+
+  <section class="challenge-overview">
+    <div class="section-heading"><div><span>4 misi utama</span><h2>Apa yang akan kamu mainkan?</h2></div><div class="time-chip">⏱️ Total waktu bermain: 07:00</div></div>
+    <div class="challenge-cards">
+      <article class="home-challenge-card"><div class="home-card-icon">🗑️</div><div><div class="home-card-number">CHALLENGE 1</div><h3>Pilah Sampah</h3><p>15 benda untuk dipilah ke tempat yang tepat.</p><span>15 item</span></div></article>
+      <article class="home-challenge-card"><div class="home-card-icon">🌱</div><div><div class="home-card-number">CHALLENGE 2</div><h3>Quiz Ekologi</h3><p>20 soal tentang lingkungan, hewan, tumbuhan, air, dan energi.</p><span>20 soal</span></div></article>
+      <article class="home-challenge-card"><div class="home-card-icon">🧩</div><div><div class="home-card-number">CHALLENGE 3</div><h3>Puzzle Bumi</h3><p>4 ronde puzzle dengan 6 potongan di setiap ronde.</p><span>4 ronde</span></div></article>
+      <article class="home-challenge-card"><div class="home-card-icon">🔍</div><div><div class="home-card-number">CHALLENGE 4</div><h3>Eksplorasi</h3><p>Jelajahi 3 area dan temukan benda-benda baik untuk Bumi.</p><span>3 area</span></div></article>
+    </div>
+  </section>
+</section>
+</main>
+
+<div id="creatorModal" class="creator-modal hidden" role="dialog" aria-modal="true" aria-labelledby="creatorTitle">
+  <div class="creator-card">
+    <button id="creatorClose" class="creator-close" type="button" aria-label="Tutup">✕</button>
+    <div class="creator-avatar">🎨</div><h2 id="creatorTitle">Tentang Creator</h2>
+    <p><strong>Petualangan Bumi</strong> adalah game edukasi interaktif bertema ekologi yang dirancang untuk belajar sambil bermain.</p>
+    <div class="creator-info"><div><span>Creator</span><strong>Siti Muslikah</strong></div><div><span>Format</span><strong>Responsive Web Game</strong></div><div><span>Fokus</span><strong>Ekologi & Lingkungan</strong></div></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef9f2">
+  <title>Challenge 1 — Pilah Sampah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/challenge1.css">
+  <script defer src="js/challenge1.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-page">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-icon">🌍</div>
+          <div>
+            <div class="brand-title">Petualangan Bumi</div>
+            <div class="brand-subtitle">Challenge 1 dari 4</div>
+          </div>
+        </div>
+        <div class="hud-group">
+          <div class="hud-card"><span>🌟</span><strong id="progressText">0/15</strong></div>
+          <div class="hud-card timer-card"><span>⏱️</span><strong id="timerText">07:00</strong></div>
+        </div>
+      </header>
+
+      <section id="tutorialScreen" class="tutorial-screen">
+        <div class="tutorial-card">
+          <div class="tutorial-badge">🗑️ CHALLENGE 1</div>
+          <h1>Pilah Sampah</h1>
+          <p class="tutorial-lead">Bantu menjaga lingkungan dengan memasukkan semua sampah ke tempat yang tepat.</p>
+          <div class="how-grid">
+            <article class="how-step"><div class="how-icon">1️⃣</div><h3>Pilih sampah</h3><p>Klik sampah, atau seret sampah ke tempat sampah yang sesuai.</p></article>
+            <article class="how-step"><div class="how-icon">2️⃣</div><h3>Pilih tempatnya</h3><p>🟩 Organik · 🟦 Plastik · 🟨 Kertas.</p></article>
+            <article class="how-step"><div class="how-icon">3️⃣</div><h3>Belajar dari jawaban</h3><p>Jawaban salah tidak mengurangi waktu. Kamu boleh mencoba lagi.</p></article>
+            <article class="how-step"><div class="how-icon">4️⃣</div><h3>Temukan semuanya</h3><p>Ada <strong>15 sampah</strong>. Selesaikan semuanya untuk lanjut.</p></article>
+          </div>
+          <div class="tutorial-note">💡 Kalau diam terlalu lama, petunjuk akan muncul otomatis.</div>
+          <button id="startChallengeBtn" class="primary-btn">Mulai Challenge 1 🚀</button>
+        </div>
+      </section>
+
+      <section id="gameArea" class="content-area hidden">
+        <div class="challenge-toolbar">
+          <div>
+            <h1>Pilah Sampah</h1>
+            <p>Masukkan setiap benda ke tempat yang tepat.</p>
+          </div>
+          <button id="hintBtn" class="secondary-btn" type="button">💡 Petunjuk</button>
+        </div>
+
+        <div class="world-card">
+          <div class="world-cloud cloud-a">☁️</div>
+          <div class="world-cloud cloud-b">☁️</div>
+          <div class="world-sun">☀️</div>
+          <div class="world-tree tree-left">🌳</div>
+          <div class="world-tree tree-right">🌳</div>
+          <div class="world-character">🧒</div>
+          <div class="speech-bubble" id="speechBubble">Ayo, kita pilah satu per satu! 🥰</div>
+
+          <div id="trashItems" class="trash-items" aria-label="Benda yang harus dipilah"></div>
+
+          <div class="bins-row">
+            <button class="trash-bin bin-organic" data-category="organic" type="button">
+              <div class="bin-color">🟩</div><div class="bin-emoji">🗑️</div><strong>Organik</strong><span>Daun & sisa tumbuhan</span>
+            </button>
+            <button class="trash-bin bin-plastic" data-category="plastic" type="button">
+              <div class="bin-color">🟦</div><div class="bin-emoji">🗑️</div><strong>Plastik</strong><span>Botol & kemasan</span>
+            </button>
+            <button class="trash-bin bin-paper" data-category="paper" type="button">
+              <div class="bin-color">🟨</div><div class="bin-emoji">🗑️</div><strong>Kertas</strong><span>Kardus & kertas</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite">
+          <span id="feedbackIcon">⭐</span>
+          <div><strong id="feedbackTitle">Hebat!</strong><p id="feedbackText"></p></div>
+        </div>
+        <div id="hintBox" class="hint-box hidden">💡 Coba perhatikan bahan benda: tumbuhan, plastik, atau kertas.</div>
+      </section>
+
+      <section id="timeoutScreen" class="end-screen hidden">
+        <div class="end-card">
+          <div class="end-stars">💚 🌱 💚</div>
+          <h2>Waktu latihan selesai</h2>
+          <p>Kamu sudah belajar banyak tentang memilah sampah. Yuk coba lagi dan lanjutkan sampai selesai!</p>
+          <button class="primary-btn" data-restart>🔄 Mulai Lagi</button>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

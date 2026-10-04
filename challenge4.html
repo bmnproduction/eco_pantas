@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef9f2">
+  <title>Challenge 4 — Eksplorasi Lingkungan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/challenge4.css">
+  <script defer src="js/challenge4.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-page">
+      <header class="topbar">
+        <div class="brand-wrap"><div class="brand-icon">🌍</div><div><div class="brand-title">Petualangan Bumi</div><div class="brand-subtitle">Challenge 4 dari 4</div></div></div>
+        <div class="hud-group"><div class="hud-card"><span>🔎</span><strong id="progressText">0/12</strong></div><div class="hud-card timer-card"><span>⏱️</span><strong id="timerText">--:--</strong></div></div>
+      </header>
+
+      <section id="tutorialScreen" class="tutorial-screen">
+        <div class="tutorial-card">
+          <div class="tutorial-badge">🔎 CHALLENGE 4</div>
+          <h1>Eksplorasi Lingkungan</h1>
+          <p class="tutorial-lead">Jelajahi 3 tempat dan temukan benda-benda yang membantu menjaga lingkungan.</p>
+          <div class="how-grid">
+            <article class="how-step"><div class="how-icon">1️⃣</div><h3>Amati area</h3><p>Lihat semua benda yang ada di taman, sungai, dan rumah.</p></article>
+            <article class="how-step"><div class="how-icon">2️⃣</div><h3>Klik benda</h3><p>Tekan benda yang menurutmu baik untuk lingkungan.</p></article>
+            <article class="how-step"><div class="how-icon">3️⃣</div><h3>Pelajari penjelasan</h3><p>Kalau salah, tidak ada hukuman. Kamu dapat penjelasan dan bisa mencoba lagi.</p></article>
+            <article class="how-step"><div class="how-icon">4️⃣</div><h3>3 area × 4 temuan</h3><p>Temukan <strong>12 benda baik</strong> untuk menyelesaikan seluruh eksplorasi.</p></article>
+          </div>
+          <div class="tutorial-note">💡 Perhatikan bentuk dan fungsi benda. Petunjuk akan muncul otomatis jika terlalu lama mencari.</div>
+          <button id="startChallengeBtn" class="primary-btn">Mulai Eksplorasi 🔎</button>
+        </div>
+      </section>
+
+      <section id="gameArea" class="content-area hidden">
+        <div class="challenge-toolbar">
+          <div><h1 id="areaTitle">🌳 Area 1: Taman</h1><p id="areaProgress">Temukan 4 benda baik di area ini.</p></div>
+          <button id="hintBtn" class="secondary-btn" type="button">💡 Petunjuk</button>
+        </div>
+
+        <div id="explorationScene" class="exploration-scene">
+          <div class="scene-sun">☀️</div><div class="scene-cloud cloud1">☁️</div><div class="scene-cloud cloud2">☁️</div>
+          <div id="explorationObjects" class="exploration-objects"></div>
+          <div class="scene-character">🧒</div>
+          <div id="sceneSpeech" class="speech-bubble">Cari 4 benda baik untuk Bumi! 👀</div>
+        </div>
+
+        <div class="area-dots" id="areaDots"></div>
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite"><span id="feedbackIcon">⭐</span><div><strong id="feedbackTitle">Hebat!</strong><p id="feedbackText"></p></div></div>
+        <div id="hintBox" class="hint-box hidden">💡 Petunjuk.</div>
+      </section>
+
+      <section id="resultScreen" class="result-screen hidden">
+        <div class="result-card">
+          <div id="resultStars" class="result-stars">🌟 🌟 🌟</div>
+          <div class="result-badge">🎉 SEMUA CHALLENGE SELESAI!</div>
+          <h2>Hebat, Penjaga Bumi!</h2>
+          <p class="result-lead">Kamu berhasil menyelesaikan 4 challenge dan belajar banyak cara menjaga lingkungan.</p>
+          <div class="score-grid">
+            <div class="score-box"><span>🏆</span><strong id="finalScore">0</strong><small>Skor</small></div>
+            <div class="score-box"><span>🌟</span><strong id="finalProgress">4/4</strong><small>Challenge</small></div>
+            <div class="score-box"><span>⏱️</span><strong id="finalTime">00:00</strong><small>Sisa waktu</small></div>
+          </div>
+          <div class="result-message" id="resultMessage">Keren sekali!</div>
+          <button class="primary-btn" id="restartBtn">🔄 Main Lagi</button>
+        </div>
+      </section>
+
+      <section id="timeoutScreen" class="end-screen hidden">
+        <div class="end-card"><div class="end-stars">🌱 💚 🌱</div><h2>Waktu latihan selesai</h2><p>Kamu sudah menjelajah dan belajar banyak. Coba lagi untuk menyelesaikan keempat challenge!</p><button class="primary-btn" id="retryBtn">🔄 Mulai Lagi</button></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

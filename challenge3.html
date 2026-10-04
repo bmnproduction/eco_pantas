@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef9f2">
+  <title>Challenge 3 — Puzzle Ekologi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/challenge3.css">
+  <script defer src="js/challenge3.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-page">
+      <header class="topbar">
+        <div class="brand-wrap"><div class="brand-icon">🌍</div><div><div class="brand-title">Petualangan Bumi</div><div class="brand-subtitle">Challenge 3 dari 4</div></div></div>
+        <div class="hud-group"><div class="hud-card"><span>🧩</span><strong id="progressText">Ronde 1/4</strong></div><div class="hud-card timer-card"><span>⏱️</span><strong id="timerText">--:--</strong></div></div>
+      </header>
+
+      <section id="tutorialScreen" class="tutorial-screen">
+        <div class="tutorial-card">
+          <div class="tutorial-badge">🧩 CHALLENGE 3</div>
+          <h1>Puzzle Ekologi</h1>
+          <p class="tutorial-lead">Susun potongan gambar sampai menjadi satu scene lingkungan yang lengkap. Ada beberapa ronde!</p>
+          <div class="how-grid">
+            <article class="how-step"><div class="how-icon">1️⃣</div><h3>Pilih potongan</h3><p>Klik satu potongan puzzle sampai terpilih.</p></article>
+            <article class="how-step"><div class="how-icon">2️⃣</div><h3>Pilih tempat</h3><p>Klik slot kosong yang menurutmu cocok dengan potongan itu.</p></article>
+            <article class="how-step"><div class="how-icon">3️⃣</div><h3>Perbaiki posisi</h3><p>Kalau salah, potongan kembali dan kamu boleh mencoba lagi.</p></article>
+            <article class="how-step"><div class="how-icon">4️⃣</div><h3>4 ronde × 6</h3><p>Ada <strong>24 potongan</strong> yang harus dipasang sampai selesai.</p></article>
+          </div>
+          <div class="tutorial-note">💡 Petunjuk muncul otomatis kalau kamu terlalu lama berpikir.</div>
+          <button id="startChallengeBtn" class="primary-btn">Mulai Puzzle 🧩</button>
+        </div>
+      </section>
+
+      <section id="gameArea" class="content-area hidden">
+        <div class="challenge-toolbar">
+          <div><h1 id="roundTitle">🧩 Ronde 1</h1><p id="roundInstruction">Susun keenam potongan dengan benar.</p></div>
+          <button id="hintBtn" class="secondary-btn" type="button">💡 Petunjuk</button>
+        </div>
+
+        <div class="puzzle-card">
+          <div class="puzzle-reference"><span>Contoh susunan:</span><div id="referenceStrip" class="reference-strip"></div></div>
+          <div id="slots" class="puzzle-grid" aria-label="Tempat puzzle"></div>
+          <div class="piece-label">Potongan puzzle</div>
+          <div id="pieces" class="pieces-grid"></div>
+        </div>
+
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite"><span id="feedbackIcon">⭐</span><div><strong id="feedbackTitle">Hebat!</strong><p id="feedbackText"></p></div></div>
+        <div id="hintBox" class="hint-box hidden">💡 Petunjuk.</div>
+      </section>
+
+      <section id="timeoutScreen" class="end-screen hidden">
+        <div class="end-card"><div class="end-stars">🧩 🌱 🧩</div><h2>Waktu latihan selesai</h2><p>Kamu sudah menyusun banyak potongan. Coba lagi dan tuntaskan semua puzzle!</p><button class="primary-btn" data-restart>🔄 Mulai Lagi</button></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
